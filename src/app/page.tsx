@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import OverviewTab from './components/OverviewTab';
+import AgenciesTab from './components/AgenciesTab';
+
 
 const TABS = ['Overview', 'Agencies', 'Trends', 'Awards'] as const;
 type Tab = typeof TABS[number];
@@ -41,7 +43,7 @@ export default function Home() {
       {/* Tab Content */}
       <div className="px-8 py-6">
         {activeTab === 'Overview' && <OverviewTab />}
-        {activeTab === 'Agencies' && <div className="text-slate-500">Agencies coming soon...</div>}
+        {activeTab === 'Agencies' && <AgenciesTab />}
         {activeTab === 'Trends' && <div className="text-slate-500">Trends coming soon...</div>}
         {activeTab === 'Awards' && <div className="text-slate-500">Awards coming soon...</div>}
       </div>
