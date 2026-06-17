@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import OverviewTab from './components/OverviewTab';
 import AgenciesTab from './components/AgenciesTab';
+import TrendsTab from './components/TrendsTab';
 
 
 const TABS = ['Overview', 'Agencies', 'Trends', 'Awards'] as const;
@@ -44,7 +45,7 @@ export default function Home() {
       <div className="px-8 py-6">
         {activeTab === 'Overview' && <OverviewTab />}
         {activeTab === 'Agencies' && <AgenciesTab />}
-        {activeTab === 'Trends' && <div className="text-slate-500">Trends coming soon...</div>}
+        {activeTab === 'Trends' && <TrendsTab />}
         {activeTab === 'Awards' && <div className="text-slate-500">Awards coming soon...</div>}
       </div>
     </main>
