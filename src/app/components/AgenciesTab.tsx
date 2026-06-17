@@ -55,7 +55,8 @@ export default function AgenciesTab() {
     setDetailLoading(true);
     try {
       const res = await fetch(`/api/agency/${agency.toptier_code}`);
-      setDetail(await res.json());
+      const data = await res.json();
+      setDetail(data);
     } finally {
       setDetailLoading(false);
     }
@@ -132,7 +133,7 @@ export default function AgenciesTab() {
                 </div>
                 <div>
                   <p className="text-2xl font-semibold text-slate-900 tracking-tight">
-                    {selected.percentage_of_total_budget?.toFixed(2)}%
+                  {((selected as any).percentage_of_total_budget_authority * 100)?.toFixed(2)}%
                   </p>
                   <p className="text-sm text-slate-400 mt-1">of federal budget</p>
                 </div>
